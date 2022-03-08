@@ -1,0 +1,6 @@
+\begin{math}
+\begin{bmatrix}
+A + B & \sum i \\
+\text{hello} & 2.56
+\end{bmatrix}
+\end{math}

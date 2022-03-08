@@ -1,0 +1,11 @@
+\[ 
+x = 
+\left\{
+\begin{array}{ll}
+      0 & x\leq a \\
+      0.4 & a\leq x\leq b \\
+      0.5 & b\leq x\leq c \\
+      1 & c\leq x \\
+\end{array} 
+\right. 
+\]

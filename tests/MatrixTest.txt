@@ -1,0 +1,11 @@
+\begin{math}
+\begin{pmatrix}
+1 & 3 \\
+4 & 5
+\end{pmatrix}
++
+\begin{pmatrix}
+A & g \\
+e & \lambda
+\end{pmatrix}
+\end{math}

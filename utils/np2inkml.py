@@ -32,3 +32,11 @@ def to_inkml(np_input, latex_truth, trace_groups, bounding_boxes, filename):
     #xmlstr = minidom.parseString(ET.tostring(ink)).toprettyxml(indent="   ")
     with open(filename, "wb") as f:
         f.write(ET.tostring(ink))
+
+    with open(filename, 'r') as f:
+        newlines = []
+        for line in f.readlines():
+            newlines.append(line.replace("&lt;", "<").replace("&gt;", ">").replace("&amp;", "&"))
+    with open(filename, 'w') as f:
+        for line in newlines:
+            f.write(line)

@@ -19,10 +19,9 @@ def math_to_edges(math_str, markup_language = 'latex'):
         mml_str = math_str
         
     headers = {'Content-Type': 'text/plain; charset=UTF-8'}
-    convert2slt = 'http://mathbrush.cs.uwaterloo.ca:3000/convert_to_slt'
+    convert2slt = 'http://mathbrush.cs.uwaterloo.ca/convert_to_slt'
     
     req = requests.post(convert2slt, data = mml_str.encode('utf-8'), headers = headers)
-    
     slt = req.json()
     if slt == ['(W!,!0)', '(W!,!0,)']:
         with open('SLTErrors.txt', mode='a') as SLTfile:
@@ -42,7 +41,7 @@ def trim_slt_list(slt_list):
         num_commas = slt_list[i].count(',')
         if num_commas == 2:
             target_idx = i
-            
+
     trimmed_slt_list = slt_list[target_idx + 1 :]
     stripped_slt_list = list(map(lambda x: x.strip('()'), trimmed_slt_list))
     edge_list = list(map(lambda x: x.split(','), stripped_slt_list))
@@ -158,18 +157,14 @@ def get_tree_root(math_input, markup_language = 'latex'):
     tree_root = edge_list_to_expression_tree(edge_list)
     return tree_root, mml_str
 
-
 def latex2mathml(latex_str):
-    
     ET.register_namespace("", "http://www.w3.org/1998/Math/MathML")
     req = requests.post('https://latexml.mathweb.org/convert', data = {'tex': latex_str, 'profile':'fragment'})
     result = req.json()['result']
     start_math_idx = result.find('<math')
     end_math_idx = result.find('</math>')
     mathml_str = result[start_math_idx:end_math_idx + 7]
-    
     tree = fromstring(mathml_str)
-    
     ## Remove alttext from the math tag and annotation at the end since
     ## it can cause issues with the slt conversion
     del(tree.attrib['alttext'])
@@ -177,5 +172,5 @@ def latex2mathml(latex_str):
     annotation = tree[0][-1]
     tree[0].remove(annotation)
 
-    mathml_string = tostring(tree, encoding = 'unicode')
+    mathml_string = tostring(tree, encoding = 'unicode').replace('ns0:', '')
     return mathml_string

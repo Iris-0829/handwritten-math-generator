@@ -180,6 +180,9 @@ class Expression:
                 ## Insert bounding box for symbol with no sample
                 
                 log_str = "No handwritten data for symbol " + self.name
+
+                with open("Missing_symbol.txt", "a+") as f:
+                    f.write(self.name + '\n')
                 logging.warning(log_str)
                 warnings.warn(log_str)
                 

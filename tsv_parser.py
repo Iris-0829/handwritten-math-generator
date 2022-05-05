@@ -27,6 +27,3 @@ def parse(filename):
             data = file.read().replace('\n', '')
             if '\"boundingboxes\">0' not in data:
                 os.remove('input/' + str(k) + '.inkml')
-
-
-parse('1.tsv')

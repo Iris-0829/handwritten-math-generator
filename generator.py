@@ -3,6 +3,7 @@ import argparse
 import sys
 import logging
 from utils.np2inkml import to_inkml
+import latex2mathml
 
 def generate(markup_input, input_type = 'file', markup_language = 'latex'):
     '''
@@ -30,6 +31,7 @@ def generate(markup_input, input_type = 'file', markup_language = 'latex'):
             math_str = file.read()
     else:
         math_str = markup_input
+
         
     slt_root, mml_str = m2t.get_tree_root(math_str, markup_language = markup_language)
     slt_root.get_traces()

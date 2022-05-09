@@ -1,0 +1,21 @@
+id	post_id	thread_id	type	comment_id	old_visual_id	visual_id	issue	formula
+28320901	3058152	3058135	answer		3077837	3077837	d	b_1\geq b_2\geq...\geq b_n
+28320902	3058152	3058135	answer		8811446	8811446	d	n\sum_{k=1}^na_kb_{n-k+1}\leq\sum_{k=1}^na_k\sum_{k=1}^nb_k\leq n\sum_{k=1}^na_kb_k.
+28320903	3058152	3058135	answer		8811447	8811447	d	(1+a^2+a^4)=(1+2a^2+a^4-a^2)=((1+a^2)^2-a^2)=(1-a+a^2)(1+a+a^2).
+28320904	3058152	3058135	answer		8811448	8811448	d	3(1-a+a^2)\geq1+a+a^2
+28320905	3058152	3058135	answer		4607271	4607271	d	(a-1)^2\geq0.
+28320906	3062816	3062816	question		96228	96228		\{X_n\}_{n=1}^{\infty}
+28320907	3062816	3062816	question		8208299	8208299		P\{X_n = \pm1 \} = \frac{1}{2}
+28320908	3062816	3062816	question		993	993		n \in \mathbb{N}
+28320909	3062816	3062816	question		8208300	8208300		Z_n=\sum_{j=1}^{n}{X_j/2^j}
+28320910	3062816	3062816	question		8208301	8208301		Z_n \xrightarrow{L} Z
+28320911	3062816	3062816	question		8208302	8208302		Z \sim U[-1, 1]
+28320912	3062816	3062816	question		3312489	3312489		\xrightarrow{L}
+28320913	3062816	3062816	question		97114	97114		U[-1, 1]
+28320914	3062816	3062816	question		840	840		[-1, 1]
+28320915	3062816	3062816	question		8811449	8811449		\lim\limits_{n\rightarrow\infty} M_{Z_n}(t) = M_{Z}(t) = \frac{e^{1 \times t} - e^{-1 \times t}}{t \times (1 - (-1))} = \frac{e^t - e^{-t}}{2t}
+28320916	3062816	3062816	question		8811450	8811450		M_{Z_n}(t) = E_{Z_n}\left(e^{tZ_n}\right) = E\left(e^{t\sum_{j = 1}^{n}{\frac{X_j}{2^j}}}\right) = E\left(\prod_{j=1}^{n}{e^{t\frac{X_j}{2^j}}} \right) = \prod_{j=1}^{n}{E_{X_j}\left(e^{t\frac{X_j}{2^j}} \right)}
+28320917	3062816	3062816	question		8811451	8811451		 E_{X_j}\left( e^{t \frac{X_j}{2^j}}  \right) = e^{t \times \frac{-1}{2^j}} \times \frac{1}{2} + e^{t \times \frac{1}{2^j}} \times \frac{1}{2}  = \frac{1}{2} \left( e^{\frac{t}{2^j}} + e^{\frac{-t}{2^j}} \right) 
+28320918	3062816	3062816	question		8811452	8811452		 M_{Z_n}(t) = \prod_{j = 1}^{n}{\frac{1}{2} \left( e^{\frac{t}{2^j}} + e^{\frac{-t}{2^j}} \right)} 
+28320919	3062816	3062816	question		97114	97114		U[-1,1]
+28320920	3062816	3062816	question		1301	1301		e^x
